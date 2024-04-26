@@ -14,4 +14,4 @@ output "aws_instance_name" {
   value = aws_instance.app.ami
 }
 
-# test
+#
