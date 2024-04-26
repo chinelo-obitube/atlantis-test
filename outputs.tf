@@ -11,5 +11,5 @@ output "tags" {
 }
 
 output "instance_name" {
-  value = aws_instance.app.ami
+  value = aws_instance.app.arn
 }
