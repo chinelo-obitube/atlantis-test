@@ -1,0 +1,34 @@
+name: Terraform Plan
+
+on:
+  push:
+    branches:
+      - main # Change to your main branch name
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.0.0 
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Plan
+        id: plan
+        run: terraform plan -out=tfplan -input=false -lock=false -no-color -json
+
+      - name: Convert Plan to JSON
+        id: convert
+        run: echo "${{ steps.plan.outputs.stdout }}" | jq . > tfplan.json
+
+      - name: Output Plan
+        run: echo "::set-output name=terraform-plan::$(cat tfplan.json)"
+
