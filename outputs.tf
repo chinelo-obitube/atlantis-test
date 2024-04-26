@@ -13,3 +13,4 @@ output "tags" {
 output "aws_instance_name" {
   value = aws_instance.app.ami
 }
+
