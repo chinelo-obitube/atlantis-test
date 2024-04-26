@@ -10,6 +10,6 @@ output "tags" {
   value = local.tags
 }
 
-output "aws_instance_name" {
-  value = aws_instance.app.arn
-}
+# output "aws_instance_name" {
+#   value = aws_instance.app.arn
+# }
