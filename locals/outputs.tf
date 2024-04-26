@@ -9,3 +9,9 @@ output "public_dns_name" {
 output "tags" {
   value = local.tags
 }
+
+# output "aws_instance_name" {
+#   value = aws_instance.app.ami
+# }
+
+# tests

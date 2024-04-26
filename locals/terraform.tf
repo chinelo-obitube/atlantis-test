@@ -8,7 +8,7 @@ terraform {
     organization = "organization-name"
     workspaces {
       name = "learn-terraform-locals"
-    }
+    }  ok
   }
   */
 
