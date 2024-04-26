@@ -15,4 +15,3 @@ output "aws_instance_name" {
 }
 
 
-
